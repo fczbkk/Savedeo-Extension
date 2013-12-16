@@ -1,0 +1,20 @@
+{
+  "name": "savedeo-extension",
+  "version": "0.2.9",
+  "title": "Savedeo video downloader",
+  "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-coffeelint": "~0.0.7",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-jasmine": "~0.5.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-mozilla-addon-sdk": "~0.3.1",
+    "grunt-contrib-compress": "~0.5.2"
+  }
+}
