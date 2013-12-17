@@ -1,1 +1,10 @@
-{"name":"savedeo-video-downloader","title":"Savedeo video downloader","id":"savedeo-video-downloader@fczbkk.com","description":"Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).","author":"Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)","license":"UNLICENSE","version":"0.2.9","fullName":"Savedeo video downloader"}
+{
+  "name": "savedeo-video-downloader",
+  "title": "Savedeo video downloader",
+  "id": "savedeo-video-downloader@fczbkk.com",
+  "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
+  "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
+  "license": "UNLICENSE",
+  "version": "0.2.13",
+  "fullName": "Savedeo video downloader"
+}

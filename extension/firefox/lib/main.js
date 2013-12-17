@@ -10,7 +10,7 @@ UrlMatch = require('./url-match').UrlMatch;
 
 downloadButton = null;
 
-urlPatterns = new UrlMatch('*://*.youtube.com/watch*', '*://*.youtube.com/playlist*', '*://*.youtube.com/user*', '*://*.youtube.com/channel/*', '*://*.vimeo.com/*', '*://*.facebook.com/photo.php', '*://*.ted.com/talks/*', '*://*.instagram.com/p/*', '*://*.flickr.com/photos/*', '*://*.vevo.com/watch/*', '*://*.dailymotion.com/video/*', '*://*.blip.tv/*', '*://*.collegehumor.com/video/*', '*://trailers.apple.com/trailers/*', '*://tv.adobe.com/embed/*', '*://helpx.adobe.com/creative-cloud/tutorials/videos/*');
+urlPatterns = new UrlMatch('*://*.youtube.com/watch*', '*://*.youtube.com/playlist*', '*://*.youtube.com/user*', '*://*.youtube.com/channel/*', '*://*.vimeo.com/*', '*://*.facebook.com/photo.php', '*://*.ted.com/talks/*', '*://*.instagram.com/p/*', '*://*.flickr.com/photos/*', '*://*.vevo.com/watch/*', '*://*.dailymotion.com/video/*', '*://*.blip.tv/*', '*://*.collegehumor.com/video/*', '*://trailers.apple.com/trailers/*', '*://tv.adobe.com/embed/*', '*://helpx.adobe.com/creative-cloud/tutorials/videos/*', '*://*.soundcloud.com/*');
 
 handleTabState = function() {
   if (urlPatterns.test(tab.activeTab.url)) {

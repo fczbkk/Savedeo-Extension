@@ -99,7 +99,7 @@ module.exports = (grunt) ->
     file.name = pkg.title
     file.description = pkg.description
     file.version = pkg.version
-    grunt.file.write chrome_manifest_json_path, JSON.stringify file
+    grunt.file.write chrome_manifest_json_path, (JSON.stringify file, null, '  ')
     # Firefox package.json
     firefox_package_json_path = 'extension/firefox/package.json'
     file = grunt.file.readJSON firefox_package_json_path
@@ -107,7 +107,7 @@ module.exports = (grunt) ->
     file.fullName = pkg.title
     file.description = pkg.description
     file.version = pkg.version
-    grunt.file.write firefox_package_json_path, JSON.stringify file
+    grunt.file.write firefox_package_json_path, (JSON.stringify file, null, '  ')
   
   # TODO: Replace this task with grunt-contrib-bump when it becomes available.
   # https://github.com/gruntjs/grunt-contrib-bump

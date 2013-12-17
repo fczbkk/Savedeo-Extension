@@ -1,8 +1,10 @@
-var __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+(function() {
+  var Host, Path, Pattern, Scheme, UrlFragment, UrlMatch, isArray, root, _ref, _ref1, _ref2,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-(function(root) {
-  var Host, Path, Pattern, Scheme, UrlFragment, UrlMatch, isArray, _ref, _ref1, _ref2;
+  root = typeof exports === 'object' ? exports : this;
+
   UrlMatch = (function() {
     function UrlMatch(pattern) {
       this._patterns = [];
@@ -58,6 +60,9 @@ var __hasProp = {}.hasOwnProperty,
     return UrlMatch;
 
   })();
+
+  root.UrlMatch = UrlMatch;
+
   Pattern = (function() {
     Pattern.prototype._RE = /^([a-z]+|\*):\/\/(.+@)*([\w\*\.\-]+(\:\d+)*)(\/[^\?\#]*)/;
 
@@ -135,6 +140,7 @@ var __hasProp = {}.hasOwnProperty,
     return Pattern;
 
   })();
+
   UrlFragment = (function() {
     UrlFragment.prototype._sanitation = {};
 
@@ -197,6 +203,7 @@ var __hasProp = {}.hasOwnProperty,
     return UrlFragment;
 
   })();
+
   Scheme = (function(_super) {
     __extends(Scheme, _super);
 
@@ -214,6 +221,7 @@ var __hasProp = {}.hasOwnProperty,
     return Scheme;
 
   })(UrlFragment);
+
   Host = (function(_super) {
     __extends(Host, _super);
 
@@ -233,6 +241,7 @@ var __hasProp = {}.hasOwnProperty,
     return Host;
 
   })(UrlFragment);
+
   Path = (function(_super) {
     __extends(Path, _super);
 
@@ -251,8 +260,9 @@ var __hasProp = {}.hasOwnProperty,
     return Path;
 
   })(UrlFragment);
-  root.UrlMatch = UrlMatch;
-  return isArray = function(value) {
+
+  isArray = function(value) {
     return value && typeof value === 'object' && value instanceof Array && typeof value.length === 'number' && typeof value.splice === 'function' && !(value.propertyIsEnumerable('length'));
   };
-})(typeof exports === 'object' ? exports : this);
+
+}).call(this);

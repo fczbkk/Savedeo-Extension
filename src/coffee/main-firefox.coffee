@@ -22,6 +22,7 @@ urlPatterns = new UrlMatch(
   '*://trailers.apple.com/trailers/*'
   '*://tv.adobe.com/embed/*'
   '*://helpx.adobe.com/creative-cloud/tutorials/videos/*'
+  '*://*.soundcloud.com/*'
 )
 
 handleTabState = ->
