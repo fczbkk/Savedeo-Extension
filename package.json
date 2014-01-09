@@ -1,6 +1,6 @@
 {
   "name": "savedeo-extension",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "title": "Savedeo video downloader",
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "scripts": {
