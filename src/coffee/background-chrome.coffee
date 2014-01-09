@@ -5,4 +5,9 @@ chrome.extension.onMessage.addListener (request, sender, sendResponse) ->
 
 chrome.pageAction.onClicked.addListener (tab) ->
   chrome.tabs.create
-    url: "http://savedeo.com/download?url=#{encodeURI tab.url}"
+    url: """
+      http://savedeo.com/download
+      ?utm_source=browser_extension
+      &utm_medium=chrome
+      &url=#{encodeURI tab.url}
+    """

@@ -5,6 +5,6 @@
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
   "license": "UNLICENSE",
-  "version": "0.2.13",
+  "version": "0.3.0",
   "fullName": "Savedeo video downloader"
 }

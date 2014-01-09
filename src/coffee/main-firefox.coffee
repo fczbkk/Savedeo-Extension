@@ -23,6 +23,10 @@ urlPatterns = new UrlMatch(
   '*://tv.adobe.com/embed/*'
   '*://helpx.adobe.com/creative-cloud/tutorials/videos/*'
   '*://*.soundcloud.com/*'
+  '*://*.vine.co/*'
+  '*://*.twitch.tv/*'
+  '*://*.metacafe.com/watch/*'
+  '*://*.mixcloud.com/*'
 )
 
 handleTabState = ->
@@ -33,7 +37,12 @@ handleTabState = ->
       contentURL: data.url 'icon16.png'
       onClick: ->
         tab.open
-          url: "http://savedeo.com/download?url=#{encodeURI tab.activeTab.url}"
+          url: """
+            http://savedeo.com/download
+            ?utm_source=browser_extension
+            &utm_medium=firefox
+            &url=#{encodeURI tab.activeTab.url}
+          """
   else
     downloadButton.destroy() if downloadButton?
 

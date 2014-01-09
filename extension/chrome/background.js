@@ -7,6 +7,6 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
 chrome.pageAction.onClicked.addListener(function(tab) {
   return chrome.tabs.create({
-    url: "http://savedeo.com/download?url=" + (encodeURI(tab.url))
+    url: "http://savedeo.com/download\n?utm_source=browser_extension\n&utm_medium=chrome\n&url=" + (encodeURI(tab.url))
   });
 });

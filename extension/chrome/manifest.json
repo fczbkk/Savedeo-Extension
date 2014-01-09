@@ -1,6 +1,6 @@
 {
   "name": "Savedeo video downloader",
-  "version": "0.2.13",
+  "version": "0.3.0",
   "manifest_version": 2,
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "icons": {
@@ -40,7 +40,11 @@
         "*://trailers.apple.com/trailers/*",
         "*://tv.adobe.com/embed/*",
         "*://helpx.adobe.com/creative-cloud/tutorials/videos/*",
-        "*://*.soundcloud.com/*"
+        "*://*.soundcloud.com/*",
+        "*://*.vine.co/*",
+        "*://*.twitch.tv/*",
+        "*://*.metacafe.com/watch/*",
+        "*://*.mixcloud.com/*"
       ],
       "js": [
         "content.js"
