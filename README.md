@@ -16,3 +16,26 @@ How to install Google Chrome extension locally
 * Go to [chrome://extensions/]
 * Check the `Developer mode` checkbox in the top right corner.
 * Either drag the folder with the extension to the page, or click the `Load unpacked extension...` button and add it manually.
+
+How to develop
+--------------
+
+```shell
+# check source code for problems and build Coffee to JS
+grunt dev
+
+# run dev task every time there's a change in the source
+# (this is what you want to run before you start any development)
+grunt watch
+```
+
+How to do updates
+-----------------
+
+```shell
+# update list of supported sites
+node crawler\server.js
+
+# build new version, bump version number
+grunt build
+```
