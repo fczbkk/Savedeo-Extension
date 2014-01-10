@@ -31,13 +31,13 @@ urlPatterns = new UrlMatch(
 
 # TODO move this to shared code, parametrize `utm_medium`
 constructUrl = (url = '') ->
-  url = 'http://savedeo.com/download'
+  base_url = 'http://savedeo.com/download'
   params_list =
     utm_source: 'browser_extension'
     utm_medium: 'firefox'
     url: encodeURI url
   params = ("#{key}=#{val}" for key, val of params_list).join '&'
-  "#{url}?#{params}"
+  "#{base_url}?#{params}"
 
 
 handleTabState = ->

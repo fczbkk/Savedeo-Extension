@@ -1,11 +1,11 @@
 var constructUrl;
 
 constructUrl = function(url) {
-  var key, params, params_list, val;
+  var base_url, key, params, params_list, val;
   if (url == null) {
     url = '';
   }
-  url = 'http://savedeo.com/download';
+  base_url = 'http://savedeo.com/download';
   params_list = {
     utm_source: 'browser_extension',
     utm_medium: 'chrome',
@@ -20,7 +20,7 @@ constructUrl = function(url) {
     }
     return _results;
   })()).join('&');
-  return "" + url + "?" + params;
+  return "" + base_url + "?" + params;
 };
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
