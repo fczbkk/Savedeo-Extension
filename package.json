@@ -1,6 +1,6 @@
 {
   "name": "savedeo-extension",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "title": "Savedeo video downloader",
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "scripts": {
@@ -21,5 +21,8 @@
     "type": "git",
     "url": "https://github.com/fczbkk/Savedeo-Extension.git"
   },
-  "license": "UNLICENSE"
+  "license": "UNLICENSE",
+  "dependencies": {
+    "request": "~2.31.0"
+  }
 }

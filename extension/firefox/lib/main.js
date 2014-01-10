@@ -26,7 +26,9 @@ constructUrl = function(url, utm_medium) {
   return "" + base_url + "?" + params;
 };
 
-var UrlMatch, browser_type, data, downloadButton, handleTabState, tab, urlPatterns, widget;
+var UrlMatch, browser_type, data, downloadButton, handleTabState, match_patterns, pattern, tab, urlPatterns, widget, _i, _len;
+
+match_patterns = require('match-patterns').match_patterns;
 
 widget = require('sdk/widget');
 
@@ -40,7 +42,12 @@ browser_type = 'firefox';
 
 downloadButton = null;
 
-urlPatterns = new UrlMatch('*://*.youtube.com/watch*', '*://*.youtube.com/playlist*', '*://*.youtube.com/user*', '*://*.youtube.com/channel/*', '*://*.vimeo.com/*', '*://*.facebook.com/photo.php', '*://*.ted.com/talks/*', '*://*.instagram.com/p/*', '*://*.flickr.com/photos/*', '*://*.vevo.com/watch/*', '*://*.dailymotion.com/video/*', '*://*.blip.tv/*', '*://*.collegehumor.com/video/*', '*://trailers.apple.com/trailers/*', '*://tv.adobe.com/embed/*', '*://helpx.adobe.com/creative-cloud/tutorials/videos/*', '*://*.soundcloud.com/*', '*://*.vine.co/*', '*://*.twitch.tv/*', '*://*.metacafe.com/watch/*', '*://*.mixcloud.com/*');
+urlPatterns = new UrlMatch();
+
+for (_i = 0, _len = match_patterns.length; _i < _len; _i++) {
+  pattern = match_patterns[_i];
+  urlPatterns.addPattern(pattern);
+}
 
 handleTabState = function() {
   if (urlPatterns.test(tab.activeTab.url)) {

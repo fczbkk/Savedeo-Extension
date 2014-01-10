@@ -25,6 +25,10 @@ module.exports = (grunt) ->
           'extension/chrome/content.js' : [
             'src/coffee/chrome/content.coffee'
           ]
+          # Node
+          'crawler/server.js' : [
+            'src/coffee/node/server.coffee'
+          ]
     
     watch:
       default:

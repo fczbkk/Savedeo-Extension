@@ -1,6 +1,6 @@
 {
   "name": "Savedeo video downloader",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "manifest_version": 2,
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "icons": {
@@ -24,27 +24,24 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.youtube.com/watch*",
-        "*://*.youtube.com/playlist*",
-        "*://*.youtube.com/user*",
-        "*://*.youtube.com/channel/*",
-        "*://*.vimeo.com/*",
-        "*://*.facebook.com/photo.php",
-        "*://*.ted.com/talks/*",
-        "*://*.instagram.com/p/*",
-        "*://*.flickr.com/photos/*",
-        "*://*.vevo.com/watch/*",
-        "*://*.dailymotion.com/video/*",
+        "*://*.trailers.apple.com/*",
+        "*://*.collegehumor.com/*",
         "*://*.blip.tv/*",
-        "*://*.collegehumor.com/video/*",
-        "*://trailers.apple.com/trailers/*",
-        "*://tv.adobe.com/embed/*",
-        "*://helpx.adobe.com/creative-cloud/tutorials/videos/*",
+        "*://*.facebook.com/*",
+        "*://*.instagram.com/*",
+        "*://*.ted.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.youtube.com/*",
+        "*://*.vevo.com/*",
+        "*://*.flickr.com/*",
+        "*://*.adobe.com/*",
         "*://*.soundcloud.com/*",
         "*://*.vine.co/*",
         "*://*.twitch.tv/*",
-        "*://*.metacafe.com/watch/*",
-        "*://*.mixcloud.com/*"
+        "*://*.youtu.be/*",
+        "*://*.metacafe.com/*",
+        "*://*.mixcloud.com/*",
+        "*://*.bit.ly/*"
       ],
       "js": [
         "content.js"
