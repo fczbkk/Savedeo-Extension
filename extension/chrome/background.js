@@ -1,14 +1,17 @@
 var constructUrl;
 
-constructUrl = function(url) {
+constructUrl = function(url, utm_medium) {
   var base_url, key, params, params_list, val;
   if (url == null) {
     url = '';
   }
+  if (utm_medium == null) {
+    utm_medium = browser_type || '';
+  }
   base_url = 'http://savedeo.com/download';
   params_list = {
     utm_source: 'browser_extension',
-    utm_medium: 'chrome',
+    utm_medium: utm_medium,
     url: encodeURI(url)
   };
   params = ((function() {
@@ -22,6 +25,10 @@ constructUrl = function(url) {
   })()).join('&');
   return "" + base_url + "?" + params;
 };
+
+var browser_type;
+
+browser_type = 'chrome';
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.what === 'showIcon') {

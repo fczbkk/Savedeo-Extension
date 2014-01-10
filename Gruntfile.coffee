@@ -14,11 +14,17 @@ module.exports = (grunt) ->
         files:
           # Firefox
           'extension/firefox/lib/main.js' : [
-            'src/coffee/main-firefox.coffee'
+            'src/coffee/general/utilities.coffee'
+            'src/coffee/firefox/main.coffee'
           ]
           # Chrome
-          'extension/chrome/background.js' : ['src/coffee/background-chrome.coffee']
-          'extension/chrome/content.js' : ['src/coffee/content-chrome.coffee']
+          'extension/chrome/background.js' : [
+            'src/coffee/general/utilities.coffee'
+            'src/coffee/chrome/background.coffee'
+          ]
+          'extension/chrome/content.js' : [
+            'src/coffee/chrome/content.coffee'
+          ]
     
     watch:
       default:

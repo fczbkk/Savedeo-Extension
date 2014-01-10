@@ -3,6 +3,9 @@ data = require('sdk/self').data
 tab = require('sdk/tabs')
 UrlMatch = require('./url-match').UrlMatch
 
+# used in `constructUrl()`
+browser_type = 'firefox'
+
 downloadButton = null
 
 urlPatterns = new UrlMatch(
@@ -28,17 +31,6 @@ urlPatterns = new UrlMatch(
   '*://*.metacafe.com/watch/*'
   '*://*.mixcloud.com/*'
 )
-
-# TODO move this to shared code, parametrize `utm_medium`
-constructUrl = (url = '') ->
-  base_url = 'http://savedeo.com/download'
-  params_list =
-    utm_source: 'browser_extension'
-    utm_medium: 'firefox'
-    url: encodeURI url
-  params = ("#{key}=#{val}" for key, val of params_list).join '&'
-  "#{base_url}?#{params}"
-
 
 handleTabState = ->
   if urlPatterns.test tab.activeTab.url

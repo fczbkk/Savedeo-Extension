@@ -1,26 +1,17 @@
-var UrlMatch, constructUrl, data, downloadButton, handleTabState, tab, urlPatterns, widget;
+var constructUrl;
 
-widget = require('sdk/widget');
-
-data = require('sdk/self').data;
-
-tab = require('sdk/tabs');
-
-UrlMatch = require('./url-match').UrlMatch;
-
-downloadButton = null;
-
-urlPatterns = new UrlMatch('*://*.youtube.com/watch*', '*://*.youtube.com/playlist*', '*://*.youtube.com/user*', '*://*.youtube.com/channel/*', '*://*.vimeo.com/*', '*://*.facebook.com/photo.php', '*://*.ted.com/talks/*', '*://*.instagram.com/p/*', '*://*.flickr.com/photos/*', '*://*.vevo.com/watch/*', '*://*.dailymotion.com/video/*', '*://*.blip.tv/*', '*://*.collegehumor.com/video/*', '*://trailers.apple.com/trailers/*', '*://tv.adobe.com/embed/*', '*://helpx.adobe.com/creative-cloud/tutorials/videos/*', '*://*.soundcloud.com/*', '*://*.vine.co/*', '*://*.twitch.tv/*', '*://*.metacafe.com/watch/*', '*://*.mixcloud.com/*');
-
-constructUrl = function(url) {
+constructUrl = function(url, utm_medium) {
   var base_url, key, params, params_list, val;
   if (url == null) {
     url = '';
   }
+  if (utm_medium == null) {
+    utm_medium = browser_type || '';
+  }
   base_url = 'http://savedeo.com/download';
   params_list = {
     utm_source: 'browser_extension',
-    utm_medium: 'firefox',
+    utm_medium: utm_medium,
     url: encodeURI(url)
   };
   params = ((function() {
@@ -34,6 +25,22 @@ constructUrl = function(url) {
   })()).join('&');
   return "" + base_url + "?" + params;
 };
+
+var UrlMatch, browser_type, data, downloadButton, handleTabState, tab, urlPatterns, widget;
+
+widget = require('sdk/widget');
+
+data = require('sdk/self').data;
+
+tab = require('sdk/tabs');
+
+UrlMatch = require('./url-match').UrlMatch;
+
+browser_type = 'firefox';
+
+downloadButton = null;
+
+urlPatterns = new UrlMatch('*://*.youtube.com/watch*', '*://*.youtube.com/playlist*', '*://*.youtube.com/user*', '*://*.youtube.com/channel/*', '*://*.vimeo.com/*', '*://*.facebook.com/photo.php', '*://*.ted.com/talks/*', '*://*.instagram.com/p/*', '*://*.flickr.com/photos/*', '*://*.vevo.com/watch/*', '*://*.dailymotion.com/video/*', '*://*.blip.tv/*', '*://*.collegehumor.com/video/*', '*://trailers.apple.com/trailers/*', '*://tv.adobe.com/embed/*', '*://helpx.adobe.com/creative-cloud/tutorials/videos/*', '*://*.soundcloud.com/*', '*://*.vine.co/*', '*://*.twitch.tv/*', '*://*.metacafe.com/watch/*', '*://*.mixcloud.com/*');
 
 handleTabState = function() {
   if (urlPatterns.test(tab.activeTab.url)) {
