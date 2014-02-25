@@ -33,7 +33,7 @@ module.exports = (grunt) ->
     watch:
       default:
         options:
-          atStart: true
+          atBegin: true
         files: ['src/coffee/**/*.coffee']
         tasks: ['dev']
     
@@ -78,12 +78,19 @@ module.exports = (grunt) ->
         cwd: 'extension/chrome/'
         src: ['**/*']
     
+    crx:
+      default:
+        src: 'extension/chrome/'
+        dest: 'build/chrome/'
+        privatekey: 'keys/chrome.pem'
+    
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-mozilla-addon-sdk'
   grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-crx'
   
   grunt.registerTask 'default', ['watch:default']
   grunt.registerTask 'dev', [

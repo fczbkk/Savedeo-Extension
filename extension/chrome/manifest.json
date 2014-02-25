@@ -1,6 +1,6 @@
 {
   "name": "Savedeo video downloader",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "manifest_version": 2,
   "description": "Downloading videos from popular sites (e.g. YouTube, Vimeo, etc).",
   "icons": {
@@ -41,7 +41,9 @@
         "*://*.youtu.be/*",
         "*://*.metacafe.com/*",
         "*://*.mixcloud.com/*",
-        "*://*.bit.ly/*"
+        "*://*.bit.ly/*",
+        "*://*.youporn.com/*",
+        "*://*.xhamster.com/*"
       ],
       "js": [
         "content.js"
